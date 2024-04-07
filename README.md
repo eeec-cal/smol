@@ -14,3 +14,4 @@ paru -S smol
 ```
 # Do you have the rights to do this?
 Yes. Kittyy gave me permission to do this.
+Here's their GitHub account: https://github.com/qtkittyy
