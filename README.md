@@ -2,7 +2,8 @@
 `smol` is a fetch scrpit made by Kittyy. It is simple & minimalistic. Plus, it looks very nice.
 
 Screenshot:
-![20240407_18h54m46s_grim](https://github.com/eeec-cal/smol/assets/165475152/9f637d2f-9d43-4c3f-a389-e4a37006c431)
+![20240407_19h56m51s_grim](https://github.com/eeec-cal/smol/assets/165475152/2609670f-b86a-4247-896e-775c96675c5a)
+
 # How to install it
 `smol` only works on Arch-based distributions. To install it, run:
 ```
