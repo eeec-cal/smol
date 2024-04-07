@@ -1,0 +1,74 @@
+#!/bin/sh
+
+kern=$(uname -r)
+wm=$(wmctrl -m | grep "Name" | cut -d: -f2 | cut -d" " -f2)
+pkgs=$(pacman -Q | wc -l)
+sh="$(basename "${SHELL}")"
+
+[ -x "$(command -v tput)" ] && \
+    bold="$(tput bold 2> /dev/null)" \
+    black="$(tput setaf 0 2> /dev/null)" \
+    red="$(tput setaf 9 2> /dev/null)" \
+    green="$(tput setaf 10 2> /dev/null)" \
+    yellow="$(tput setaf 11 2> /dev/null)" \
+    blue="$(tput setaf 12 2> /dev/null)" \
+    magenta="$(tput setaf 13 2> /dev/null)" \
+    cyan="$(tput setaf 14 2> /dev/null)" \
+    white="$(tput setaf 15 2> /dev/null)" \
+    reset="$(tput sgr0 2> /dev/null)"
+
+faces=(\
+    ".m." \
+    ".w." \
+    "^w^" \
+    "._." \
+    ">w<" \
+    "UwU" \
+    ".,." \
+    "^v^" \
+    "OwO" \
+    "^u^" \
+    "O<O" \
+    "UuU" \
+    "O.O" \
+    "o.O" \
+    ":3c" \
+)
+
+col="${red}  ${green}  ${yellow}  ${blue}  ${magenta}  ${cyan}  ${white} "
+
+len=${#faces[@]}
+i=$((RANDOM % len))
+ran=${faces[i]}
+
+colors=false
+while getopts ":c" opt; do
+    case $opt in
+        c)
+            colors=true ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            echo "Available options are [-c]"
+            exit 1 ;;
+    esac
+done
+
+if [ "$colors" == "true" ]; then
+cat << EOF
+
+        ${red}wm     ${reset}$wm
+  ${ran}   ${magenta}pkgs   ${reset}$pkgs
+        ${blue}sh     ${reset}$sh
+
+   ${col}
+
+EOF
+else
+cat << EOF
+
+        ${red}wm     ${reset}$wm
+  ${ran}   ${magenta}pkgs   ${reset}$pkgs
+        ${blue}sh     ${reset}$sh
+
+EOF
+fi
