@@ -38,7 +38,7 @@ faces=(\
     ":3c" \
 )
 
-col="${red}  ${green}  ${yellow}  ${blue}  ${magenta}  ${cyan}  ${white} "
+col="${red}󱓻  ${green}󱓻  ${yellow}󱓻  ${blue}󱓻  ${magenta}󱓻  ${cyan}󱓻  ${white}󱓻 "
 
 len=${#faces[@]}
 i=$((RANDOM % len))
