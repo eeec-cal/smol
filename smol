@@ -3,6 +3,12 @@
 # Written by Kittyy
 # https://github.com/qtkittyy
 
+if [[ -e ~/.config/smol/config ]]; then
+	. ~/.config/smol/config
+else
+	colorchar=󱓻
+fi
+
 kern=$(uname -r)
 wm=$(wmctrl -m | grep "Name" | cut -d: -f2 | cut -d" " -f2)
 pkgs=$(pacman -Q | wc -l)
@@ -38,7 +44,7 @@ faces=(\
     ":3c" \
 )
 
-col="${red}󱓻  ${green}󱓻  ${yellow}󱓻  ${blue}󱓻  ${magenta}󱓻  ${cyan}󱓻  ${white}󱓻 "
+col="${red}$colorchar ${green}$colorchar ${yellow}$colorchar ${blue}$colorchar ${magenta}$colorchar ${cyan}$colorchar ${white}$colorchar "
 
 len=${#faces[@]}
 i=$((RANDOM % len))
